@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raíces Digitales</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="banner-superior">
@@ -52,21 +59,26 @@
 
     <section class="contacto" id="formulario-contacto">
         <h2>Rellena nuestro formulario para ser parte de un taller</h2>
-        <form action="#">
+        <form id="formulario">
             <label for="Nombre">Nombres:</label>
             <input type="text" id="Nombre" name="Nombre" required>
+            <span class="error" id="errorNombre"></span>
 
             <label for="Apellido">Apellidos:</label>
             <input type="text" id="Apellido" name="Apellido" required>
+            <span class="error" id="errorApellido"></span>
 
             <label for="RUT">RUT:</label>
             <input type="text" id="RUT" name="RUT" required>
+            <span class="error" id="errorRUT"></span>
 
             <label for="fecha">Fecha de Nacimiento:</label>
             <input type="text" id="fecha" name="fecha" required>
+            <span class="error" id="errorFecha"></span>
 
             <label for="Correo">Correo Electrónico:</label>
             <input type="email" id="Correo" name="Correo" required>
+            <span class="error" id="errorCorreo"></span>
 
             <label for="Taller">Elige tu Taller de interés:</label>
             <select id="Taller" name="Taller">
@@ -74,9 +86,10 @@
                 <option value="Danza">Danza</option>
                 <option value="Musica Urbana">Música Urbana</option>
             </select>
+            <span class="error" id="errorTaller"></span>
 
             <label for="Observaciones">Observaciones:</label>
-            <input type="text" id="Observaciones" name="Observaciones" required>
+            <input type="text" id="Observaciones" name="Observaciones">
 
             <button type="submit" id="btn-submit">Enviar</button>
         </form>
@@ -100,5 +113,84 @@
             </button>
         </div>
     </footer>
+
+    <script>
+    // Validación del formulario
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.querySelectorAll(".error").forEach(e => e.innerText = "");
+
+        let hayErrores = false;
+        const nombres = document.getElementById("Nombre").value.trim();
+        const apellidos = document.getElementById("Apellido").value.trim();
+        const rut = document.getElementById("RUT").value.trim();
+        const fecha = document.getElementById("fecha").value.trim();
+        const correo = document.getElementById("Correo").value.trim();
+        const taller = document.getElementById("Taller").value.trim();
+
+        if (!nombres) { document.getElementById("errorNombre").innerText = "Campo requerido"; hayErrores = true; }
+        if (!apellidos) { document.getElementById("errorApellido").innerText = "Campo requerido"; hayErrores = true; }
+        if (!rut) { document.getElementById("errorRUT").innerText = "Campo requerido"; hayErrores = true; }
+        if (!fecha) { document.getElementById("errorFecha").innerText = "Campo requerido"; hayErrores = true; }
+        if (!correo) { document.getElementById("errorCorreo").innerText = "Campo requerido"; hayErrores = true; }
+        if (!taller) { document.getElementById("errorTaller").innerText = "Selecciona un taller"; hayErrores = true; }
+
+        if (rut && !/^\d{7,8}-[\dkK]$/.test(rut)) {
+            document.getElementById("errorRUT").innerText = "Debe ser nnnnnnnn-n";
+            hayErrores = true;
+        } else if (rut && !validarRut(rut)) {
+            document.getElementById("errorRUT").innerText = "Dígito verificador no coincide";
+            hayErrores = true;
+        }
+
+        if (fecha && !/^\d{2}\/\d{2}\/\d{4}$/.test(fecha)) {
+            document.getElementById("errorFecha").innerText = "Formato dd/mm/aaaa";
+            hayErrores = true;
+        } else if (fecha) {
+            const [dd, mm, aaaa] = fecha.split("/").map(num => parseInt(num));
+            if (dd < 1 || dd > 31 || mm < 1 || mm > 12 || aaaa < 0 || aaaa > 9999) {
+                document.getElementById("errorFecha").innerText = "Fecha fuera de rango";
+                hayErrores = true;
+            } else {
+                const hoy = new Date();
+                const diaHoy = hoy.getDate();
+                const mesHoy = hoy.getMonth() + 1;
+                const anioHoy = hoy.getFullYear();
+                let edad = anioHoy - aaaa;
+                if (mesHoy < mm || (mesHoy == mm && diaHoy < dd)) {
+                    edad--;
+                }
+                if (edad < 14) {
+                    document.getElementById("errorFecha").innerText = "Debe tener al menos 14 años";
+                    hayErrores = true;
+                }
+            }
+        }
+
+        if (correo && !/^[a-zA-Z0-9.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9]+$/.test(correo)) {
+            document.getElementById("errorCorreo").innerText = "Formato incorrecto";
+            hayErrores = true;
+        }
+
+        if (!hayErrores) {
+            alert("Formulario enviado correctamente. ¡Gracias por inscribirte!");
+        }
+    });
+
+    function validarRut(rutCompleto) {
+        rutCompleto = rutCompleto.replace(/\./g, '').toUpperCase();
+        const [rut, dv] = rutCompleto.split('-');
+        let suma = 0;
+        let multiplo = 2;
+        for (let i = rut.length - 1; i >= 0; i--) {
+            suma += parseInt(rut.charAt(i)) * multiplo;
+            multiplo = multiplo < 7 ? multiplo + 1 : 2;
+        }
+        let dvEsperado = 11 - (suma % 11);
+        dvEsperado = dvEsperado === 11 ? '0' : dvEsperado === 10 ? 'K' : dvEsperado.toString();
+        return dvEsperado === dv;
+    }
+    </script>
+
 </body>
 </html>
