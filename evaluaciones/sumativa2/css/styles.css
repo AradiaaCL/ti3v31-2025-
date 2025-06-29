@@ -403,11 +403,17 @@ footer p {
 
 .error {
     color: red;
-    background: #ffe6e6; /* rojito muy claro */
+    background: #ffe6e6;
     border: 1px solid red;
     border-radius: 4px;
     padding: 4px 8px;
+    margin-left: 10px;
     margin-top: 4px;
+    font-size: 0.85em;
     display: inline-block;
 }
 
+
+.error:empty {
+    display: none;
+}
