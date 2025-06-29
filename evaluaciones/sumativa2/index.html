@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Digitales</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="banner-superior">
+        <div class="glow"></div>
+    </div>
+    
+    <header>
+        <h1>Cooperativa Cultural Raíces Digitales</h1>
+        <p class="slogan">Tu escena, tu pantalla, tu ritmo</p>
+        <img src="assets/logo.png" alt="Logo Institucional" class="logo-institucional">
+    </header>
+
+    <section class="hero">
+        <div class="overlay">
+            <h2>¡Vive el arte urbano!</h2>
+            <p>Explora talleres de teatro, danza y música en tu comunidad</p>
+            <a id="btn" href="#formulario-contacto">Inscribirme</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="Talleres">
+            <h2>Talleres en Curso</h2>
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <h3>Taller de Teatro</h3>
+                    <p>Incorpórate al mundo del drama desde lo colectivo y lo territorial</p>
+                    <span>Horarios: Lunes y Martes - 12:00 a 14:00</span>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Taller de Danza</h3>
+                    <p>Conecta con tu cuerpo y con el universo, aprovecha este gran espacio inclusivo y creativo</p>
+                    <span>Horarios: Viernes y Sábados - 11:00 a 14:00</span>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Taller de Música Urbana</h3>
+                    <p>Baila con ritmo, crea tu propia identidad y mensaje al mundo con la música</p>
+                    <span>Horarios: Miércoles - 16:00 a 18:00</span>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="contacto" id="formulario-contacto">
+        <h2>Rellena nuestro formulario para ser parte de un taller</h2>
+        <form action="#">
+            <label for="Nombre">Nombres:</label>
+            <input type="text" id="Nombre" name="Nombre" required>
+
+            <label for="Apellido">Apellidos:</label>
+            <input type="text" id="Apellido" name="Apellido" required>
+
+            <label for="RUT">RUT:</label>
+            <input type="text" id="RUT" name="RUT" required>
+
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="text" id="fecha" name="fecha" required>
+
+            <label for="Correo">Correo Electrónico:</label>
+            <input type="email" id="Correo" name="Correo" required>
+
+            <label for="Taller">Elige tu Taller de interés:</label>
+            <select id="Taller" name="Taller">
+                <option value="Teatro">Teatro</option>
+                <option value="Danza">Danza</option>
+                <option value="Musica Urbana">Música Urbana</option>
+            </select>
+
+            <label for="Observaciones">Observaciones:</label>
+            <input type="text" id="Observaciones" name="Observaciones" required>
+
+            <button type="submit" id="btn-submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Cooperativa Cultural Raíces Digitales</p>
+        <p>Correo: <a href="mailto:raicesdig2025@gmail.com">raicesdig2025@gmail.com</a></p>
+        <div class="main__socials">
+            <button class="Link__facebook" aria-label="Facebook">
+                <img src="assets/fck.png" alt="Facebook logo" class="facebook-icon">
+            </button>
+            <button class="Link__instagram" aria-label="Instagram">
+                <img src="assets/inst.png" alt="Instagram logo" class="instagram-icon">
+            </button>
+            <button class="Link__whatsapp" aria-label="WhatsApp">
+                <img src="assets/wsp.png" alt="WhatsApp logo" class="whatsapp-icon">
+            </button>
+            <button class="Link__tiktok" aria-label="TikTok">
+                <img src="assets/tkt.png" alt="TikTok logo" class="tiktok-icon">
+            </button>
+        </div>
+    </footer>
+</body>
+</html>
