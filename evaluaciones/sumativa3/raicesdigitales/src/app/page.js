@@ -101,3 +101,23 @@ export default function Home() {
     </div>
   );
 }
+useEffect(() => {
+  const fetchData = async () => {
+    const resInsc = await fetch("https://ejemplo-firebase-657d0-default-rtdb.firebaseio.com/inscripciones.json");
+    const resTalleres = await fetch("https://ejemplo-firebase-657d0-default-rtdb.firebaseio.com/talleres.json");
+
+    const dataInsc = await resInsc.json();
+    const dataTalleres = await resTalleres.json();
+
+    const lista = Object.entries(dataInsc || {}).map(([id, insc]) => ({
+      id,
+      ...insc,
+      tallerInfo: dataTalleres?.[insc.tallerId] || null,
+    }));
+
+    setInscripciones(lista);
+    setLoading(false);
+  };
+
+  fetchData();
+}, []);
