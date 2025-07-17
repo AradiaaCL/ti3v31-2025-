@@ -11,8 +11,8 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resInsc = await fetch("https://ejemplo-firebase-657d0-default-rtdb.firebaseio.com/inscripciones.json");
-        const resTalleres = await fetch("https://ejemplo-firebase-657d0-default-rtdb.firebaseio.com/talleres.json");
+        const resInsc = await fetch("https://raices-digitales-default-rtdb.firebaseio.com/inscripciones.json");
+        const resTalleres = await fetch("https://raices-digitales-default-rtdb.firebaseio.com/talleres.json");
 
         const dataInsc = await resInsc.json();
         const dataTalleres = await resTalleres.json();
@@ -41,3 +41,4 @@ export default function Home() {
     </main>
   );
 }
+
