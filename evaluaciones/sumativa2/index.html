@@ -1,197 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raíces Digitales</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .error {
-            color: red;
-            font-size: 0.85em;
-            margin-left: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raíces Digitales</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .error {
+      color: red;
+      font-size: 0.85em;
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="banner-superior">
-        <div class="glow"></div>
+  <div class="banner-superior"><div class="glow"></div></div>
+
+  <header>
+    <h1>Cooperativa Cultural Raíces Digitales</h1>
+    <p class="slogan">Tu escena, tu pantalla, tu ritmo</p>
+    <img src="assets/logo.png" alt="Logo Institucional" class="logo-institucional">
+  </header>
+
+  <section class="hero">
+    <div class="overlay">
+      <h2>¡Vive el arte urbano!</h2>
+      <p>Explora talleres de teatro, danza y música en tu comunidad</p>
+      <a id="btn" href="#formulario-contacto">Inscribirme</a>
     </div>
-    
-    <header>
-        <h1>Cooperativa Cultural Raíces Digitales</h1>
-        <p class="slogan">Tu escena, tu pantalla, tu ritmo</p>
-        <img src="assets/logo.png" alt="Logo Institucional" class="logo-institucional">
-    </header>
+  </section>
 
-    <section class="hero">
-        <div class="overlay">
-            <h2>¡Vive el arte urbano!</h2>
-            <p>Explora talleres de teatro, danza y música en tu comunidad</p>
-            <a id="btn" href="#formulario-contacto">Inscribirme</a>
-        </div>
+  <main>
+    <section class="Talleres">
+      <h2>Talleres en Curso</h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Taller de Teatro</h3>
+          <p>Incorpórate al mundo del drama desde lo colectivo y lo territorial</p>
+          <span>Horarios: Lunes y Martes - 12:00 a 14:00</span>
+        </article>
+        <article class="tarjeta">
+          <h3>Taller de Danza</h3>
+          <p>Conecta con tu cuerpo y con el universo, aprovecha este gran espacio inclusivo y creativo</p>
+          <span>Horarios: Viernes y Sábados - 11:00 a 14:00</span>
+        </article>
+        <article class="tarjeta">
+          <h3>Taller de Música Urbana</h3>
+          <p>Baila con ritmo, crea tu propia identidad y mensaje al mundo con la música</p>
+          <span>Horarios: Miércoles - 16:00 a 18:00</span>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <main>
-        <section class="Talleres">
-            <h2>Talleres en Curso</h2>
-            <div class="tarjetas">
-                <article class="tarjeta">
-                    <h3>Taller de Teatro</h3>
-                    <p>Incorpórate al mundo del drama desde lo colectivo y lo territorial</p>
-                    <span>Horarios: Lunes y Martes - 12:00 a 14:00</span>
-                </article>
+  <section class="contacto" id="formulario-contacto">
+    <h2>Rellena nuestro formulario para ser parte de un taller</h2>
+    <form id="formulario">
+      <label for="Nombre">Nombres:</label>
+      <input type="text" id="Nombre" name="Nombre" required><span class="error" id="errorNombre"></span>
+      <label for="Apellido">Apellidos:</label>
+      <input type="text" id="Apellido" name="Apellido" required><span class="error" id="errorApellido"></span>
+      <label for="RUT">RUT:</label>
+      <input type="text" id="RUT" name="RUT" required><span class="error" id="errorRUT"></span>
+      <label for="fecha">Fecha de Nacimiento:</label>
+      <input type="text" id="fecha" name="fecha" required><span class="error" id="errorFecha"></span>
+      <label for="Correo">Correo Electrónico:</label>
+      <input type="email" id="Correo" name="Correo" required><span class="error" id="errorCorreo"></span>
+      <label for="Taller">Elige tu Taller de interés:</label>
+      <select id="Taller" name="Taller">
+        <option value="t1">Teatro</option>
+        <option value="t2">Danza</option>
+        <option value="t3">Música Urbana</option>
+      </select><span class="error" id="errorTaller"></span>
+      <label for="Observaciones">Observaciones:</label>
+      <input type="text" id="Observaciones" name="Observaciones">
+      <button type="submit" id="btn-submit">Enviar</button>
+    </form>
+  </section>
 
-                <article class="tarjeta">
-                    <h3>Taller de Danza</h3>
-                    <p>Conecta con tu cuerpo y con el universo, aprovecha este gran espacio inclusivo y creativo</p>
-                    <span>Horarios: Viernes y Sábados - 11:00 a 14:00</span>
-                </article>
+  <footer>
+    <p>© 2025 Cooperativa Cultural Raíces Digitales</p>
+    <p>Correo: <a href="mailto:raicesdig2025@gmail.com">raicesdig2025@gmail.com</a></p>
+    <div class="main__socials">
+      <button class="Link__facebook" aria-label="Facebook"><img src="assets/fck.png" alt="Facebook logo" class="facebook-icon"></button>
+      <button class="Link__instagram" aria-label="Instagram"><img src="assets/inst.png" alt="Instagram logo" class="instagram-icon"></button>
+      <button class="Link__whatsapp" aria-label="WhatsApp"><img src="assets/wsp.png" alt="WhatsApp logo" class="whatsapp-icon"></button>
+      <button class="Link__tiktok" aria-label="TikTok"><img src="assets/tkt.png" alt="TikTok logo" class="tiktok-icon"></button>
+    </div>
+  </footer>
 
-                <article class="tarjeta">
-                    <h3>Taller de Música Urbana</h3>
-                    <p>Baila con ritmo, crea tu propia identidad y mensaje al mundo con la música</p>
-                    <span>Horarios: Miércoles - 16:00 a 18:00</span>
-                </article>
-            </div>
-        </section>
-    </main>
+  <!-- Firebase SDK y envío -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDRach6Py2oy8GlpKJ45tOZ-gTs5RFcYV4",
+      authDomain: "raices-digitales.firebaseapp.com",
+      databaseURL: "https://raices-digitales-default-rtdb.firebaseio.com",
+      projectId: "raices-digitales",
+      storageBucket: "raices-digitales.firebasestorage.app",
+      messagingSenderId: "346255047284",
+      appId: "1:346255047284:web:dc292071467c031000af21"
+    };
 
-    <section class="contacto" id="formulario-contacto">
-        <h2>Rellena nuestro formulario para ser parte de un taller</h2>
-        <form id="formulario">
-            <label for="Nombre">Nombres:</label>
-            <input type="text" id="Nombre" name="Nombre" required>
-            <span class="error" id="errorNombre"></span>
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
 
-            <label for="Apellido">Apellidos:</label>
-            <input type="text" id="Apellido" name="Apellido" required>
-            <span class="error" id="errorApellido"></span>
-
-            <label for="RUT">RUT:</label>
-            <input type="text" id="RUT" name="RUT" required>
-            <span class="error" id="errorRUT"></span>
-
-            <label for="fecha">Fecha de Nacimiento:</label>
-            <input type="text" id="fecha" name="fecha" required>
-            <span class="error" id="errorFecha"></span>
-
-            <label for="Correo">Correo Electrónico:</label>
-            <input type="email" id="Correo" name="Correo" required>
-            <span class="error" id="errorCorreo"></span>
-
-            <label for="Taller">Elige tu Taller de interés:</label>
-            <select id="Taller" name="Taller">
-                <option value="Teatro">Teatro</option>
-                <option value="Danza">Danza</option>
-                <option value="Musica Urbana">Música Urbana</option>
-            </select>
-            <span class="error" id="errorTaller"></span>
-
-            <label for="Observaciones">Observaciones:</label>
-            <input type="text" id="Observaciones" name="Observaciones">
-
-            <button type="submit" id="btn-submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© 2025 Cooperativa Cultural Raíces Digitales</p>
-        <p>Correo: <a href="mailto:raicesdig2025@gmail.com">raicesdig2025@gmail.com</a></p>
-        <div class="main__socials">
-            <button class="Link__facebook" aria-label="Facebook">
-                <img src="assets/fck.png" alt="Facebook logo" class="facebook-icon">
-            </button>
-            <button class="Link__instagram" aria-label="Instagram">
-                <img src="assets/inst.png" alt="Instagram logo" class="instagram-icon">
-            </button>
-            <button class="Link__whatsapp" aria-label="WhatsApp">
-                <img src="assets/wsp.png" alt="WhatsApp logo" class="whatsapp-icon">
-            </button>
-            <button class="Link__tiktok" aria-label="TikTok">
-                <img src="assets/tkt.png" alt="TikTok logo" class="tiktok-icon">
-            </button>
-        </div>
-    </footer>
-
-    <script>
-    // Validación del formulario
     document.getElementById("formulario").addEventListener("submit", function(event) {
-        event.preventDefault();
-        document.querySelectorAll(".error").forEach(e => e.innerText = "");
+      event.preventDefault();
+      document.querySelectorAll(".error").forEach(e => e.innerText = "");
+      let hayErrores = false;
 
-        let hayErrores = false;
-        
-        const nombres = document.getElementById("Nombre").value.trim();
-        const apellidos = document.getElementById("Apellido").value.trim();
-        const rut = document.getElementById("RUT").value.trim();
-        const fecha = document.getElementById("fecha").value.trim();
-        const correo = document.getElementById("Correo").value.trim();
-        const taller = document.getElementById("Taller").value.trim();
+      const nombres = document.getElementById("Nombre").value.trim();
+      const apellidos = document.getElementById("Apellido").value.trim();
+      const rut = document.getElementById("RUT").value.trim();
+      const fecha = document.getElementById("fecha").value.trim();
+      const correo = document.getElementById("Correo").value.trim();
+      const taller = document.getElementById("Taller").value.trim();
+      const obs = document.getElementById("Observaciones").value.trim();
 
-        if (!nombres) { document.getElementById("errorNombre").innerText = "Campo requerido"; hayErrores = true; }
-        if (!apellidos) { document.getElementById("errorApellido").innerText = "Campo requerido"; hayErrores = true; }
-        if (!rut) { document.getElementById("errorRUT").innerText = "Campo requerido"; hayErrores = true; }
-        if (!fecha) { document.getElementById("errorFecha").innerText = "Campo requerido"; hayErrores = true; }
-        if (!correo) { document.getElementById("errorCorreo").innerText = "Campo requerido"; hayErrores = true; }
-        if (!taller) { document.getElementById("errorTaller").innerText = "Selecciona un taller"; hayErrores = true; }
+      if (!nombres || !apellidos || !rut || !fecha || !correo || !taller) hayErrores = true;
 
-        if (rut && !/^\d{7,8}-[\dkK]$/.test(rut)) {
-            document.getElementById("errorRUT").innerText = "Debe ser nnnnnnnn-n";
-            hayErrores = true;
-        } else if (rut && !validarRut(rut)) {
-            document.getElementById("errorRUT").innerText = "Dígito verificador no coincide";
-            hayErrores = true;
-        }
-
-        if (fecha && !/^\d{2}\/\d{2}\/\d{4}$/.test(fecha)) {
-            document.getElementById("errorFecha").innerText = "Formato dd/mm/aaaa";
-            hayErrores = true;
-        } else if (fecha) {
-            const [dd, mm, aaaa] = fecha.split("/").map(num => parseInt(num));
-            if (dd < 1 || dd > 31 || mm < 1 || mm > 12 || aaaa < 0 || aaaa > 9999) {
-                document.getElementById("errorFecha").innerText = "Fecha fuera de rango";
-                hayErrores = true;
-            } else {
-                const hoy = new Date();
-                const diaHoy = hoy.getDate();
-                const mesHoy = hoy.getMonth() + 1;
-                const anioHoy = hoy.getFullYear();
-                let edad = anioHoy - aaaa;
-                if (mesHoy < mm || (mesHoy == mm && diaHoy < dd)) {
-                    edad--;
-                }
-                if (edad < 14) {
-                    document.getElementById("errorFecha").innerText = "Debe tener al menos 14 años";
-                    hayErrores = true;
-                }
-            }
-        }
-
-        if (correo && !/^[a-zA-Z0-9.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9]+$/.test(correo)) {
-            document.getElementById("errorCorreo").innerText = "Formato incorrecto";
-            hayErrores = true;
-        }
-
-        if (!hayErrores) {
-            alert("Formulario enviado correctamente. ¡Gracias por inscribirte!");
-        }
+      if (!hayErrores) {
+        const nuevaInscripcion = {
+          nombre: nombres,
+          apellido: apellidos,
+          rut: rut,
+          fechaNacimiento: fecha,
+          correo: correo,
+          tallerId: taller,
+          observaciones: obs
+        };
+        const nuevaClave = db.ref().child("inscripciones").push().key;
+        db.ref("inscripciones/" + nuevaClave).set(nuevaInscripcion)
+          .then(() => {
+            alert("✅ ¡Formulario enviado y guardado en Firebase!");
+            document.getElementById("formulario").reset();
+          })
+          .catch((error) => {
+            console.error("❌ Error al guardar:", error);
+            alert("Hubo un error al guardar la inscripción.");
+          });
+      }
     });
-
-    function validarRut(rutCompleto) {
-        rutCompleto = rutCompleto.replace(/\./g, '').toUpperCase();
-        const [rut, dv] = rutCompleto.split('-');
-        let suma = 0;
-        let multiplo = 2;
-        for (let i = rut.length - 1; i >= 0; i--) {
-            suma += parseInt(rut.charAt(i)) * multiplo;
-            multiplo = multiplo < 7 ? multiplo + 1 : 2;
-        }
-        let dvEsperado = 11 - (suma % 11);
-        dvEsperado = dvEsperado === 11 ? '0' : dvEsperado === 10 ? 'K' : dvEsperado.toString();
-        return dvEsperado === dv;
-    }
-    </script>
-
+  </script>
 </body>
 </html>
